@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neves Crédito - Precisando de Dinheiro?</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0c1e3c;
+      color: white;
+    }
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #0c1e3c;
+    }
+    header h1 {
+      color: #d4ff00;
+      font-size: 28px;
+      margin: 0;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 20px;
+      background-color: #12284a;
+      border-radius: 12px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #ffd700;
+    }
+    form {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    input, select {
+      margin-bottom: 15px;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      padding: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .whatsapp-btn img {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .contato {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    footer {
+      text-align: center;
+      margin: 30px 0 10px;
+      color: #aaa;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 22px; }
+      header p { font-size: 16px; }
+      li { font-size: 16px; }
+      input, select, .whatsapp-btn { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PRECISANDO DE DINHEIRO?</h1>
+  <p>Nós temos a solução! Conheça os serviços da Neves Crédito</p>
+</header>
+
+<section>
+  <h2>Empréstimos Consignado e Serviços</h2>
+  <ul>
+    <li>Cartão de Crédito</li>
+    <li>Aposentado e Pensionista</li>
+    <li>Bolsa Família</li>
+    <li>Crédito pelo Papel de Luz</li>
+    <li>Antecipação do FGTS</li>
+    <li>Carteira Assinada</li>
+    <li>BPC</li>
+    <li>LOAS</li>
+  </ul>
+
+  <form onsubmit="enviarWhatsapp(); return false;">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="tel" id="telefone" placeholder="Seu telefone" required>
+    <select id="servico" required>
+      <option value="">Selecione o serviço de interesse</option>
+      <option value="Cartão de Crédito">Cartão de Crédito</option>
+      <option value="Aposentado e Pensionista">Aposentado e Pensionista</option>
+      <option value="Bolsa Família">Bolsa Família</option>
+      <option value="Crédito pelo Papel de Luz">Crédito pelo Papel de Luz</option>
+      <option value="Antecipação do FGTS">Antecipação do FGTS</option>
+      <option value="Carteira Assinada">Carteira Assinada</option>
+      <option value="BPC">BPC</option>
+      <option value="LOAS">LOAS</option>
+    </select>
+    <a class="whatsapp-btn" href="#" onclick="enviarWhatsapp()">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp">
+      Enviar pelo WhatsApp
+    </a>
+  </form>
+
+  <div class="contato">
+    (88) 99236-2890<br>
+    @nevescredito
+  </div>
+</section>
+
+<footer>
+  © 2025 Neves Crédito. Todos os direitos reservados.
+</footer>
+
+<script>
+  function enviarWhatsapp() {
+    const nome = document.getElementById("nome").value;
+    const telefone = document.getElementById("telefone").value;
+    const servico = document.getElementById("servico").value;
+    const msg = `Olá, meu nome é ${nome}, meu telefone é ${telefone} e tenho interesse em: ${servico}`;
+    const url = "https://wa.me/5588992362890?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+  }
+</script>
+
+</body>
+</html>
